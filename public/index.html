@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="utf-8" />
+    <title>电信积分平台</title>
+    <link rel="stylesheet" href="bower_components/normalize-css/normalize.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/pagenation.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <h3>电信积分平台</h3>
+			<ul class="user-method" style="float:right">
+				<li><a href="#/">返回首页</a></li>
+                <li><a href="#">修改密码</a></li>
+				<li><a href="#">退出登录</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div style="clear:both"></div>
+    <!-- side menu -->
+    <section class="asidemenu" id="asidemenu">
+		<section class="menu_list">
+			<p class="menu_head current">
+				信息展示
+			</p>
+			<section class="menu_body">
+				<a href="#/sinfoshow">
+					积分兑换信息展示
+				</a>
+				<a href="#/sinfolist">
+					积分兑换交易记录
+				</a>
+			</section>
+			<p class="menu_head">
+				基础信息
+			</p>
+			<section class="menu_body">
+				<a href="#/areachange">地区兑换阀值</a>
+				<a href="#/apiuser/list">接口用户管理</a>
+				<a href="#/exchange/exchangelist">兑换指标</a>
+			</section>
+			<p class="menu_head">
+				接口管理
+			</p>
+			<section class="menu_body">
+				
+			</section>
+			<p class="menu_head">
+				系统管理
+			</p>
+			<section class="menu_body">
+				<a href="#/system/userlist">系统用户管理</a>
+			</section>
+		</section>
+
+    <!--
+        <ul class="menu-one">
+            <li class="firstChild">
+                <section class="menuheader">
+	                <span class="txt">
+	                	信息展示
+	                </span>
+                </section>
+                <ul class="menu-two">
+                    <li><a href="#/sinfoshow">积分兑换信息展示</a></li>
+                    <li><a href="#/sinfolist">积分兑换交易记录</a></li>
+                </ul>
+            </li>
+            <li>
+                <section class="menuheader">
+	                <span class="txt">
+	                	基础信息
+	                </span>
+                </section>
+                <ul class="menu-two">
+                    <li><a href="#/areachange">地区兑换阀值</a></li>
+                    <li><a href="#/interfaceuser">接口用户管理</a></li>
+                    <li><a href="#/exchangeindex">兑换指标</a></li>
+                </ul>
+            </li>
+            <li>
+                <section class="menuheader">
+	                <span class="txt">
+	                	接口管理
+	                </span>
+                </section>
+            </li>
+            <li>
+                <section class="menuheader">
+	                <span class="txt">
+	                	系统管理
+	                </span>
+                </section>
+                <ul class="menu-two">
+                    <li><a href="#/system/userlist">系统用户管理</a></li>
+                </ul>
+            </li>
+        </ul> -->
+    </section>
+    
+    <!-- main content -->
+    <section class="main">
+        <div ng-view></div>
+    </section>
+    <footer></footer>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/pagenation.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="bower_components/jquery.json-2.4.min.js"></script>
+    <!-- echarts -->
+    <script src="bower_components/echarts/dist/echarts.js"></script>
+    <!-- angular -->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <!-- route -->
+    <script src="app/app-routes.js"></script>
+    <!-- module -->
+    <script src="app/app.module.js"></script>
+    <!-- service -->
+    <!--<script src="app/service.js"></script>-->
+    <!-- controllers -->
+    <!-- index -->
+    <script src="app/components/index/MainCtrl.js"></script>
+    <!-- infoshow -->
+    <script src="app/components/infoshow/sinfoshow/SinfoCtrl.js"></script>
+    <script src="app/components/infoshow/sinfolist/SlistCtrl.js"></script>
+    <!-- basic info -->
+    <script src="app/components/basicinfo/areachange/AreaChangeCtrl.js"></script>
+    <script src="app/components/basicinfo/apiuser/apiUserList/ApiUserCtrl.js"></script>
+    <script src="app/components/basicinfo/apiuser/addApiUser/AddApiUserCtrl.js"></script>
+    <script src="app/components/basicinfo/apiuser/editApiUser/EditApiUserCtrl.js"></script>
+    <!-- exchange index -->
+    <script src="app/components/basicinfo/exchangeindex/exchangeList/ExchangeListCtrl.js"></script>
+    <script src="app/components/basicinfo/exchangeindex/exchangeAdd/ExchangeAddCtrl.js"></script>
+    <script src="app/components/basicinfo/exchangeindex/exchangeEdit/ExchangeEditCtrl.js"></script>
+    <!-- system -->
+    <script src="app/components/system/systemuser/userlist/UserlistCtrl.js"></script>
+    <script src="app/components/system/systemuser/adduser/AddUserCtrl.js"></script>
+    <script src="app/components/system/systemuser/useredit/UserEditCtrl.js"></script>
+    <script src="js/base.js"></script>
+    
+    <!--<script src="js/createlist.js"></script>-->
+</body>
+
+</html>

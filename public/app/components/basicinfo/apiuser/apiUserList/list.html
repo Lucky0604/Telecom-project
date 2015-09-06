@@ -1,0 +1,37 @@
+<section style="margin-top:15px;margin-left:0;">
+    <a class="btn add" href="#/apiuser/addapiuser">增加</a>
+</section>
+<table class="list">
+    <caption>接口用户管理</caption>
+    <th>
+        <tr class="thead">
+            <td>用户编号</td>
+            <td>用户类型</td>
+            <td>用户状态</td>
+            <td>用户说明</td>
+            <td>操作</td>
+        </tr>
+    </th>
+    <tr class="tmain" ng-repeat="user in users">
+        <td>{{user.userCode}}</td>
+        <td>{{user.userType == 1 ? "电信外部":"电信内部"}}</td>
+		<td>
+			<span ng-if="user.enabled == '0'">正常</span>
+			<span ng-if="user.enabled == '1'">冻结</span>
+			<span ng-if="user.enabled == '9'">测试</span>
+		</td>
+        <td>{{user.userRemark}}</td>
+        <td>
+            <a href="#/apiuser/editapiuser/{{user.id}}" class="list-edit btn">编辑</a>
+            <button ng-class="{disabled: user.enabled == '1'}" ng-click="delStore(user.id,user.enabled)" class="list-delete btn">冻结</button>
+        </td>
+    </tr>
+</table>
+<ul class="tcdPageCode">
+    <li ng-class="{true:'disabled-page'}[ 1 == currentPage]"><a href ng-click="firstPage()">首页</a></li>
+    <li ng-class="{true:'disabled-page'}[ 1 == currentPage]"><a href ng-click="prevPage()">上一页</a></li>
+    <li ng-class="pageTool({{n}})" ng-repeat="n in pageToolCursor"><a id="{{n}}" href ng-click="gotoXpage(n)">{{n}}</a></li>
+    <li><a>共{{itemsPerPage}}页</a></li>
+    <li ng-class="{true:'disabled-page'}[ (currentPage) == itemsPerPage]"><a href ng-click="nextPage()">后一页</a></li>
+    <li ng-class="{true:'disabled-page'}[ (currentPage) == itemsPerPage]"><a href ng-click="lastPage()">尾页</a></li>
+</ul>

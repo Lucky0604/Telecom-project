@@ -1,0 +1,32 @@
+<table class="list">
+	<caption>地区兑换阀值</caption>
+	<th>
+		<tr class="thead">
+			<td>区域</td>
+			<td>区域码</td>
+			<td>阀值</td>
+			<td>操作</td>
+		</tr>
+	</th>
+	<tr class="tmain" ng-repeat="list in scoreList">
+		<td>{{list.CITY_NAME}}</td>
+		<td>{{list.AREA_CODE}}</td>
+		<td id="tdList">
+			<section ng-show="checked">
+				{{list.STANDARD}}
+			</section>
+			<section ng-hide="checked">
+				<input type="text" style="width:60px;" value="" ng-model="list.STANDARD"/>
+			</section>
+		</td>
+		<td>
+			<section ng-show="checked">
+				<button ng-click="checked=!checked" class="btn list-edit">编辑</button>
+			</section>
+			<section ng-hide="checked">
+				<button ng-click="submit($index)" class="btn list-save">保存</button>
+				<button ng-click="checked=!checked">取消</button>
+			</section>
+		</td>
+	</tr>
+</table>

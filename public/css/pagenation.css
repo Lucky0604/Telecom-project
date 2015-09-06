@@ -1,0 +1,39 @@
+
+.tcdPageCode{
+    position: absolute;
+    bottom: 70px;
+    list-style: none;
+}
+
+.tcdPageCode li {
+    display: inline;
+    float: left;
+    width: 3em;
+    height: 1.5em;
+    margin-right: 6px;
+    
+    border:1px solid #ccc;
+    border-radius: .2em;
+    text-align: center;
+    line-height: 1.5em;
+    color: #666;
+    text-decoration: none;
+}
+.tcdPageCode li a{
+    text-decoration: none;
+    color: #666;
+}
+
+.active-page{
+    background: #ff8301;
+}
+.disabled-page{
+    background: #eee;
+}
+.disabled-page a{
+    background: #eee;
+    color: #aaa !important;
+}
+.active-page a{
+    color: #fff !important;
+}

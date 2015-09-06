@@ -1,0 +1,43 @@
+<section class="search-result">
+    <section class="item">
+            <label class="item-label">手机号码：</label>
+            <input type="text" placeholder="查询手机号码" class="txt-input" ng-model="list.mobileCode"/>
+    </section>
+    <section class="item">
+            <label class="item-label">兑换时间：</label>
+            <input type="text" placeholder="查询日期" class="txt-input" ng-model="list.exchangeTime" />
+    </section>
+</section>
+<table class="list">
+    <caption>积分兑换交易记录</caption>
+    <th>
+        <tr class="thead">
+            <td>手机号码</td>
+            <td>兑换积分数量</td>
+            <td>兑换时间</td>
+            <td>兑换结果</td>
+            <td>兑换返回记录</td>
+            <td>推荐人手机号</td>
+        </tr>
+    </th>
+    <tr class="tmain" ng-repeat="list in lists | filter: list">
+        <td>{{list.mobileCode}}</td>
+        <td>{{list.exchangeNum}}</td>
+        <td>{{list.exchangeTime}}</td>
+        <td><span ng-if="list.exchangeEnable == '0'">成功</span>
+            <span ng-if="list.exchangeEnable == '1'">失败</span>
+            <span ng-if="list.exchangeEnable == '3'">无响应</span>
+            <span ng-if="list.exchangeEnable == '9'">未知</span>
+        </td>
+        <td>{{list.exchangeLog}}</td>
+        <td>{{list.thphone}}</td>
+    </tr>
+</table>
+<ul class="tcdPageCode">
+        <li ng-class="{true:'disabled-page'}[ 1 == currentPage]"><a href ng-click="firstPage()">首页</a></li>
+        <li ng-class="{true:'disabled-page'}[ 1 == currentPage]"><a href ng-click="prevPage()">上一页</a></li>
+        <li ng-class="pageTool({{n}})" ng-repeat="n in pageToolCursor"><a id="{{n}}" href ng-click="gotoXpage(n)">{{n}}</a></li>
+        <li><a>共{{itemsPerPage}}页</a></li>
+        <li ng-class="{true:'disabled-page'}[ (currentPage) == itemsPerPage]"><a href ng-click="nextPage()">后一页</a></li>
+        <li ng-class="{true:'disabled-page'}[ (currentPage) == itemsPerPage]"><a href ng-click="lastPage()">尾页</a></li>
+    </ul>

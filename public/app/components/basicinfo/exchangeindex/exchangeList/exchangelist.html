@@ -1,0 +1,31 @@
+<section style="margin-top:15px;margin-left:0;">
+    <a class="btn add" href="#/exchange/exchangeadd">增加</a>
+</section>
+<table class="list">
+    <caption>兑换指标</caption>
+    <th>
+        <tr class="thead">
+            <td>排序号</td>
+            <td>显示名称</td>
+            <td>值集</td>
+            <td>操作</td>
+        </tr>
+    </th>
+    <tr class="tmain" ng-repeat="dict in dicts">
+        <td>{{dict.sortNo}}</td>
+        <td>{{dict.dictLable}}</td>
+        <td>{{dict.dictCode}}</td>
+        <td>
+            <a href="#/exchange/exchangeedit/{{dict.id}}" class="list-edit btn">编辑</a>
+            <button ng-click="delStore(dict.id)" class="list-delete btn">删除</button>
+        </td>
+    </tr>
+</table>
+<ul class="tcdPageCode">
+    <li ng-class="{true:'disabled-page'}[ 1 == currentPage]"><a href ng-click="firstPage()">首页</a></li>
+    <li ng-class="{true:'disabled-page'}[ 1 == currentPage]"><a href ng-click="prevPage()">上一页</a></li>
+    <li ng-class="pageTool({{n}})" ng-repeat="n in pageToolCursor"><a id="{{n}}" href ng-click="gotoXpage(n)">{{n}}</a></li>
+    <li><a>共{{itemsPerPage}}页</a></li>
+    <li ng-class="{true:'disabled-page'}[ (currentPage) == itemsPerPage]"><a href ng-click="nextPage()">后一页</a></li>
+    <li ng-class="{true:'disabled-page'}[ (currentPage) == itemsPerPage]"><a href ng-click="lastPage()">尾页</a></li>
+</ul>

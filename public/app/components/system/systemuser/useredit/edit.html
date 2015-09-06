@@ -1,0 +1,41 @@
+<section class="form">
+    <section class="form-title">
+        <span>编辑用户</span>
+    </section>
+    <section class="item">
+        <section class="input-block">
+            <label class="item-label">姓名：</label>
+            <input type="text" placeholder="请输入您的用户名" class="txt-input" ng-model="user.username" />
+        </section>
+        <section class="input-block">
+            <label class="item-label">账号：</label>
+            <input type="text" placeholder="请输入您的账号" class="txt-input" ng-model="user.account" />
+        </section>
+    </section>
+    <section class="item">
+        <section class="input-block">
+            <label class="item-label">性别：</label>
+            <select ng-model="user.usersex" ng-options="sex.code as sex.value for sex in sexList" class="sex-select"></select>
+            
+        </section>
+        <section class="input-block">
+            <label class="item-label">手机号：</label>
+            <input type="text" placeholder="请输入手机号" class="txt-input" ng-model="user.userphone" />
+        </section>
+    </section>
+    <section class="item">
+        <section class="input-block">
+            <label class="item-label">部门名称：</label>
+            <input type="text" placeholder="请输入部门名称" class="txt-input" ng-model="user.depid" />
+        </section>
+        <section class="input-block">
+            <label class="item-label">备注：</label>
+            <input type="text" placeholder="请输入职位" class="txt-input" ng-model="user.remark" />
+        </section> 
+    </section>
+    
+    <section class="item" align="center">
+        <a class="btn add" ng-click="submit()">保存</a>
+        <a class="btn back" href="#/system/userlist">返回</a>
+    </section>
+</section>

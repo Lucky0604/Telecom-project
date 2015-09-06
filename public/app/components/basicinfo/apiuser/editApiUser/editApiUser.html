@@ -1,0 +1,27 @@
+<section class="form">
+    <section class="form-title">
+        <span>新增接口用户</span>
+    </section>
+    <section class="item">
+        <section class="input-block">
+            <label class="item-label">用户编号：</label>
+            <input type="text" placeholder="请输入您的用户名" class="txt-input" ng-model="user.userCode" />
+        </section>
+        <section class="input-block">
+            <label class="item-label">用户类型：</label>
+            <select ng-model="user.userType" ng-options="user.code as user.value for user in userList" class="sex-select"></select>
+        </section>
+    </section>
+    <section class="item">
+        <section class="input-block">
+            <label class="item-label">用户说明：</label>
+            <input type="text" placeholder="选择您的性别" class="txt-input" ng-model="user.userRemark" />
+        </section>
+    </section>
+    
+    
+    <section class="item" align="center">
+        <a class="btn add" ng-click="submit()">保存</a>
+        <a class="btn back" href="#/apiuser/list">返回</a>
+    </section>
+</section>

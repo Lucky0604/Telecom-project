@@ -1,0 +1,50 @@
+<section class="form">
+    <section class="form-title">
+        <span>新增用户</span>
+    </section>
+    <section class="item">
+        <section class="input-block">
+            <label class="item-label">姓名：</label>
+            <input type="text" placeholder="请输入您的用户名" class="txt-input" ng-model="users.username" />
+        </section>
+        <section class="input-block">
+            <label class="item-label">账号：</label>
+            <input type="text" placeholder="请输入您的账号" class="txt-input" ng-model="users.account" />
+        </section>
+    </section>
+    <section class="item">
+        <section class="input-block">
+            <label class="item-label">密码：</label>
+            <input type="text" placeholder="请输入您的密码" class="txt-input" ng-model="users.password" />
+        </section>
+        <section class="input-block">
+            <label class="item-label">性别：</label>
+            <select ng-model="users.usersex" ng-options="sex.code as sex.value for sex in sexList" class="sex-select"></select>
+        </section>
+    </section>
+    <section class="item">
+        <section class="input-block">
+            <label class="item-label">手机号：</label>
+            <input type="text" placeholder="请输入手机号" class="txt-input" ng-model="users.userphone" />
+        </section>
+        <section class="input-block">
+            <label class="item-label">部门名称：</label>
+            <input type="text" placeholder="请输入部门名称" class="txt-input" ng-model="users.depid" />
+        </section>
+    </section>
+    <section class="item">
+        <section class="input-block">
+            <label class="item-label">备注：</label>
+            <input type="text" placeholder="备注信息" class="txt-input" ng-model="users.remark" />
+        </section>
+        <section class="input-block">
+            <label class="item-label">注册时间：</label>
+            <input type="text" placeholder="注册时间" class="txt-input" ng-model="users.regtime" />
+        </section>
+    </section>
+    
+    <section class="item" align="center">
+        <a class="btn add" ng-click="submit()">保存</a>
+        <a class="btn back" href="#/system/userlist">返回</a>
+    </section>
+</section>

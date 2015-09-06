@@ -1,0 +1,33 @@
+<section class="selection">
+    <select required="" ng-model="list.areaCode" ng-options="m.code as m.value for m in area">
+        <option value="" style="height:30px !important;">选择地区</option>
+    </select>
+</section>
+<table class="list">
+	<caption>积分兑换信息展示</caption>
+	<th>
+		
+		<tr class="thead">
+			<td>地区号码</td>
+			<td>地区名称</td>
+			<td>积分数量</td>
+			<td>兑换月份</td>
+
+		</tr>
+	</th>
+	<tr class="tmain" ng-repeat="list in lists | filter: list">
+		<td>{{list.areaCode}}</td>
+		<td>{{list.cityName}}</td>
+		<td>{{list.sumjf}}</td>
+		<td>{{list.exchangeTime}}</td>
+	</tr>
+</table>
+
+<ul class="tcdPageCode">
+        <li ng-class="{true:'disabled-page'}[ 1 == currentPage]"><a href ng-click="firstPage()">首页</a></li>
+        <li ng-class="{true:'disabled-page'}[ 1 == currentPage]"><a href ng-click="prevPage()">上一页</a></li>
+        <li ng-class="pageTool({{n}})" ng-repeat="n in pageToolCursor"><a id="{{n}}" href ng-click="gotoXpage(n)">{{n}}</a></li>
+        <li><a>共{{itemsPerPage}}页</a></li>
+        <li ng-class="{true:'disabled-page'}[ (currentPage) == itemsPerPage]"><a href ng-click="nextPage()">后一页</a></li>
+        <li ng-class="{true:'disabled-page'}[ (currentPage) == itemsPerPage]"><a href ng-click="lastPage()">尾页</a></li>
+    </ul>
